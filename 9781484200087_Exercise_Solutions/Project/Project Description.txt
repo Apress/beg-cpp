@@ -1,0 +1,89 @@
+Example Project:
+You’ve read the book. You’ve digested the text. Now it’s time to apply your newfound knowledge to a small, but 
+perfectly formed project. I’ll describe the problem here and give some hints on how to solve it.
+Outline
+The aim of the project is to create a program that keeps track of information about teachers and students in an 
+educational establishment. This information will be held as a series of Teacher and Student records, both of which will 
+contain the following attributes:
+
+First Name: Alphabetic
+Surname: Alphabetic
+Address: Mixed - One or more lines of street address.
+City: Alphabetic
+State: Alphabetic
+Zip Code: Numeric - Must be 5 digits.
+Phone Number: Numeric - Must be of the form ###--###-####. The area code must not have a leading digit of 0 or 1.
+The last two exchange code digits must not be 11.
+        
+Student records will have these additional attributes:
+        
+Student ID: Alphanumeric - Form is "IDnnn" where n is a decimal digit
+Grade (percentile): Numeric - Integer between 0 and 100.
+        
+Teacher records will have the following additional attributes:
+
+Teaching experience (in years): Numeric - obviously must be positive integer
+Salary: Numeric - obviously must be positive integer
+        
+The program should support the following operations for students and teachers:
+
+*	Add a record
+*	Search for a record by surname and display it.
+*	Display all the student records or all the teacher records.
+*	Find and delete a record.
+*	Delete all  the records for students and/or teachers
+
+The records for students and teachers should be backed up in a file or files so that when the program starts the 
+current set of teacher and student records are available. When a record is added, all the attributes of the student or 
+teacher should be properly entered by the user. The street address can consist of one or more lines. 
+
+When a user deletes a record, they should be prompted to enter the surname of the teacher or student record 
+they wish to delete. Once deleted, a record can’t be searched for or displayed. There should be a way to deal with 
+duplicate surnames resulting from searches
+
+When a user searches for a record, they should be prompted to enter the surname of the record they wish to 
+find. The program should then display all the attributes of the record containing the desired surname (i.e., if the record 
+refers to a Student, then the Grade and Student ID fields should be displayed).
+ 
+Developer Notes:
+Here are a few suggestions on how you might approach implementing the program:
+*	Define the types of objects required by the implementation first.
+*	Map out the basic logic and the operations needed for each of the object types.
+*	Have the objects take care of themselves in terms of data validation and input and output as far as possible.
+*	Use a container class to organize the objects.
+*	Use the main() function as a switch that directs program execution based on user input resulting from a menu of options.
+*	Make sure that you test all the options, including incorrect data entry. 
+
+My Solution:
+There is no unique solution to this exercise. Because the specification is open to interpretation there is huge flexibility 
+in the possible approaches to solving the problem. My solution is not necessarily the best by any means. I chose to 
+include as many of the programming techniques I discuss in the book that would fit reasonably with the problem but 
+they are not all essential in an implementation.
+
+The Person class contains the basic structure of both the derived Student and Teacher classes. The Person class 
+contains most of the code associated with the classes representing individuals and provides for polymorphic behavior. 
+It is structured to take full advantage of member variable data hiding and operator overloading. The data members of 
+the Person class are also objects of types Name, Address, and Phone. This allows the characteristics of these types to 
+be changed without necessarily changing the rest of the program. These types also implement data validation where 
+appropriate and take care of input and output. The Address and Phone classes assume US specifications but these 
+could easily be changed to support other national contexts. 
+
+The containers for students and teachers are defined by a Group<T> class template. All instances of Group<T> store 
+smart pointers to objects in the free store of the same type, std::shared_ptr<Person>. Using smart pointers means that 
+deletions of objects in the free store is taken care of. Because copies are of objects of type T are created, class T must 
+support copying.
+
+Saving and restoring data is automatic in my solution. Data is retrieved from files when the program starts and the 
+current state is saved when the program ends. I chose not to update the files when a student or teacher was added or 
+deleted but you could. This would provide some protection for the data against crashes, which might occur due to 
+external events that are nothing to do with the program.
+
+There are a lot of ways in which this program can be improved or extended, so you could use it as a basis to try out 
+more programming techniques and gain experience with managing a lot of code by extending the functionality. The 
+program could provide for outputting data sorted by name; students could be output ordered by Grade and teachers 
+could be optionally in order of experience for example. At present there's no provision for updating records once they 
+have been created. All such extensions require interesting additions to the capabilities of the classes.
+
+Above all, remember that if you use C++ in a clean and simple way, code maintenance will be very much easier. 
+Always assume that another developer will be looking over your code and will need to understand how it works—
+you’ll be thankful you did so in the long run!

@@ -1,0 +1,22 @@
+// Ex8_04.cpp
+// Modifying the value of a caller variable
+#include  <iostream>
+
+double change_it(double* pointer_to_it);    // Function prototype
+
+int main()  
+{
+  double it{ 5.0 };
+  double result{ change_it(&it) };		      // Now  we  pass the address
+
+  std::cout << "After function execution, it = " << it
+    << "\nResult returned is " << result << std::endl;
+}
+
+// Function to  modify an argument  and return  it
+double change_it(double* pit) 
+{
+  *pit += 10.0; 				                    // This modifies the original it
+  std::cout << "Within function, *pit = " << *pit << std::endl;
+  return  *pit;
+}

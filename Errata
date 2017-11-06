@@ -1,0 +1,35 @@
+This is not a final proposal. 
+I am currently studying chapter 03 , and here are the errata I have found so far. Contact the author and he will approve them.
+(It is also a way for me to advertise my work as a proofreaded, something that I have done all ready for 2 linux books)
+
+
+
+Chapter 1
+page 12 
+F5B9E1 as a decimal value is given by
+15 × 165 + 5 × 164 + 11 × 163 + 9 × 162 + 14 × 161 + 1 × 160
+should be writen in a way to denote clearly the powers of 16, like :
+15 × 16^5 + 5 × 16^4 + 11 × 16^3 + 9 × 16^2 + 14 × 16^1 + 1 × 16^0
+
+Chapter 2
+page 28   binary literals
+the declaration 
+  int mask {0B11111111000000001111111100000000}; // 4 bytes
+should be substituted with 
+  unsigned int mask {0B11111111000000001111111100000000}; // 4 bytes
+  
+Chapter 3
+page 69  Ex3_02.cpp
+the line 
+   std::cout << "Is today's value(" << static_cast<int>(today)
+            << ") the same as poets_day(" << static_cast<int>(poets_day)
+            << ")" << static_cast<char>(ch) << std::endl;
+should have in the middle the new variable:tomorrow, that was assigned with a copy of poets_day 
+           << ") the same as poets_day(" << static_cast<int>(tomorrow)
+
+page 70 
+After the text :
+  For example, the Day enumeration could be defined like this:
+    enum class Day {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday};
+the correct is 
+    enum  Day {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday};

@@ -33,3 +33,9 @@ After the text :
     enum class Day {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday};
 the correct is 
     enum  Day {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday};
+
+page 73 Ex3_03.cpp
+the 5th line of main is 
+   std::cout << "Value of global count2 = " << count1 << std::endl;
+the correct is 
+   std::cout << "Value of global count2 = " << count2 << std::endl;

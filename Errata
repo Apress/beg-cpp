@@ -39,3 +39,11 @@ the 5th line of main is
    std::cout << "Value of global count2 = " << count1 << std::endl;
 the correct is 
    std::cout << "Value of global count2 = " << count2 << std::endl;
+   
+Chaoter 4 
+page 102 Exercises 
+  Exercise 4-1. Write a program that prompts for two integers to be entered and then uses an
+  if-else statement to output a message that states whether or not the integers are the same.
+The correct text should be (according to the solution provided in this github) 
+  Exercise 4-1. Write a program that prompts for two integers to be entered and then uses an
+  if-else statement to output a message that states whether or not the 1st integer is exactly divided by the 2nd.

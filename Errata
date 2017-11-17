@@ -47,3 +47,11 @@ page 102 Exercises
 The correct text should be (according to the solution provided in this github) 
   Exercise 4-1. Write a program that prompts for two positive integers to be entered and then uses an
   if-else statement to output a message that states whether or not the 1st integer is exactly divided by the 2nd.
+  
+  
+Chapter 5
+page 141 
+The sentence : "The function is a member of the class type, array<double,100>,
+of the object all array objects will have a fill() member, as well as other members."
+should be substituted by : "The function is a member of the class type, array<double,100>,
+of the object. All array objects will have a fill() member, as well as other members."

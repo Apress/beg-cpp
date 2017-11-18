@@ -55,3 +55,10 @@ The sentence : "The function is a member of the class type, array<double,100>,
 of the object all array objects will have a fill() member, as well as other members."
 should be substituted by : "The function is a member of the class type, array<double,100>,
 of the object. All array objects will have a fill() member, as well as other members."
+
+Chapter 6
+page 160 
+The sentence near the top of the page: "If Arnie was an option instead
+of Fatty, the minimum array dimension would need to accommodate the string “Arnold Schwarzenegger”, which
+requires 21 bytes." 
+should have the following end: " ... which requires 22 bytes." , because we need one extra byte for the \0

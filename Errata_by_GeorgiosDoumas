@@ -66,12 +66,12 @@ The initial sentences are confusing. Here is how they are now :
 << Assuming that you’ve already declared pstring, of type
 “pointer to char,” you could allocate an array of type char in the free store by writing the following:
 double* pdata {new double[20]};       // Allocate 100 double values   >>
-But the writer must decide if he wants to talk about a char array pstring or a double array pdata. 
+But the writer must decide if he wants to talk about a char array pstring or a double array pdata (100 or 20 elements?). 
 And also take in account that, as shown on the bottom of page 168, it is not needed to declare in a seperate step the pointer
 A possible chabge could be to drop the initial "Assuming ... , " and have either :
 <<You could allocate an array of type char in the free store by writing the following:
-  *char pstring {new char[20]};         // Allocate 100 char values  >>
+  *char pstring {new char[20]};         // Allocate 20 char values  >>
   or :
 <<You could allocate an array of type char in the free store by writing the following:
-double* pdata {new double[20]};       // Allocate 100 double values   >>
+double* pdata {new double[20]};       // Allocate 20 double values   >>
 Please contact the author to check this serious issue. 

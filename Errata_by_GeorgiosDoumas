@@ -96,3 +96,8 @@ std::unique_ptr< double[]> pvalues {new double[n]} ; // Create array of n elemen
 should be substituted with (to be consistent with the following for-loops):
 const size_t max {100};     // Array size
 std::unique_ptr< double[]> pvalues {new double[max]} ; // Create array of max elements on the heap
+ page 175
+ The sentence :
+ "The result of executing this is that pdata will cease to point to anything."
+ should be substituted with :
+ "The result of executing this is that pvalue will cease to point to anything."

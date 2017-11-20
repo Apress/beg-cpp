@@ -88,3 +88,9 @@ scope, then it’s no longer possible to delete that memory."
 scope, then it’s no longer possible to delete the memory."
 "If a pointer containing the address of a block of memory in the free store goes out of
 scope, then it’s no longer possible to delete the memory."
+
+page 174 
+The line : 
+const size_t n {100};       // Array size
+should be substituted with :
+const size_t max {100};     // Array size

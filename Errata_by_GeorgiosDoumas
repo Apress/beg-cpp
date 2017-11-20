@@ -90,7 +90,9 @@ scope, then it’s no longer possible to delete the memory."
 scope, then it’s no longer possible to delete the memory."
 
 page 174 
-The line : 
+The lines : 
 const size_t n {100};       // Array size
-should be substituted with :
+std::unique_ptr< double[]> pvalues {new double[n]} ; // Create array of n elements on the heap
+should be substituted with (to be consistent with the following for-loops):
 const size_t max {100};     // Array size
+std::unique_ptr< double[]> pvalues {new double[max]} ; // Create array of max elements on the heap

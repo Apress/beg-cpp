@@ -9,12 +9,14 @@ F5B9E1 as a decimal value is given by
 should be writen in a way to denote clearly the powers of 16, like :
 15 × 16^5 + 5 × 16^4 + 11 × 16^3 + 9 × 16^2 + 14 × 16^1 + 1 × 16^0
 
+
 Chapter 2
 page 28   binary literals
 the declaration 
   int mask {0B11111111000000001111111100000000}; // 4 bytes
 should be substituted with 
   unsigned int mask {0B11111111000000001111111100000000}; // 4 bytes
+  
   
 Chapter 3
 page 69  Ex3_02.cpp
@@ -37,6 +39,7 @@ the 5th line of main is
    std::cout << "Value of global count2 = " << count1 << std::endl;
 the correct is 
    std::cout << "Value of global count2 = " << count2 << std::endl;
+   
    
 Chapter 4 
 page 102 Exercises 
@@ -106,3 +109,12 @@ page 175
 page 176
 std::cout << *pd << std::endl;    // Outputs 999.0   (this is wrong) 
 std::cout << *pdata2 << std::endl;    // Outputs 999.0  (this is the correct to appear in the book) 
+
+
+Chapter 7 
+page 186 
+The line : string sleeping {6, 'z'};
+should be like this : string sleeping (6, 'z');
+Similarly instead of : string light_sleeper {1, 'z'}; 
+we should have : string light_sleeper (1, 'z');
+

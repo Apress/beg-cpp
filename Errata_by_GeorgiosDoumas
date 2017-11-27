@@ -118,3 +118,15 @@ should be like this : string sleeping (6, 'z');
 Similarly instead of : string light_sleeper {1, 'z'}; 
 we should have : string light_sleeper (1, 'z');
 
+page 197
+At the top of page , 1st code snippet is confusing and is followed by a sentence with a typing error: 
+if (!text.compare(i, 4, phrase, 7, 4))
+   std::cout << "text contains " << phrase << " starting at index " << i << std::endl;
+The above code should have a different output. Something like :
+if (!text.compare(i, 4, phrase, 7, 4))
+   std::cout << "text contains -pick- starting at index " << i << std::endl;
+And the following sentence says :
+ The two additional arguments are the index position of the substring in phrase and its length. The substring of
+   text is compared with the substring of text.
+The correct of course would be to say : 
+ The substring of text is compared with the substring of phrase.

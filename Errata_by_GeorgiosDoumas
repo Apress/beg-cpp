@@ -135,6 +135,8 @@ The correct of course would be to say :
 Chapter 8
 page 224 
 A very serious explanation error, just before the Note at the top of page:
-"Passing a non-const argument for const function parameter will not compile."
-The correct it the opposite, here is how it can be expressed in clear and unambigous language : 
-"Passing a const variable from the caller code block, as argument into a non-const function-parameter, will not compile."
+"Passing a non-const argument for const function parameter will not compile."  [NO! it will compile!]
+The correct is the opposite, here is how it can be expressed in clear and unambigous language : 
+"Passing a const pointer variable from the caller code block, as argument for a non-const pointer function-parameter, 
+will not compile, because the compiler could not ensure that such a non-const pointer parameter is not altered in the 
+function body "

@@ -1,0 +1,142 @@
+This is not a final proposal. 
+I am currently studying chapter 06 , and here are the errata I have found so far. Contact the author and he will approve them.
+(It is also a way for me to advertise my work as a proofreader, something that I have done all ready for 2 linux books)
+
+Chapter 1
+page 12 
+F5B9E1 as a decimal value is given by
+15 × 165 + 5 × 164 + 11 × 163 + 9 × 162 + 14 × 161 + 1 × 160
+should be writen in a way to denote clearly the powers of 16, like :
+15 × 16^5 + 5 × 16^4 + 11 × 16^3 + 9 × 16^2 + 14 × 16^1 + 1 × 16^0
+
+
+Chapter 2
+page 28   binary literals
+the declaration 
+  int mask {0B11111111000000001111111100000000}; // 4 bytes
+should be substituted with 
+  unsigned int mask {0B11111111000000001111111100000000}; // 4 bytes
+  
+  
+Chapter 3
+page 69  Ex3_02.cpp
+the line 
+   std::cout << "Is today's value(" << static_cast<int>(today)
+            << ") the same as poets_day(" << static_cast<int>(poets_day)
+            << ")" << static_cast<char>(ch) << std::endl;
+should have in the middle the new variable:tomorrow, that was assigned with a copy of poets_day 
+           << ") the same as poets_day(" << static_cast<int>(tomorrow)
+
+page 70 
+After the text :
+  For example, the Day enumeration could be defined like this:
+    enum class Day {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday};
+the correct is 
+    enum  Day {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday};
+
+page 73 Ex3_03.cpp
+the 5th line of main is 
+   std::cout << "Value of global count2 = " << count1 << std::endl;
+the correct is 
+   std::cout << "Value of global count2 = " << count2 << std::endl;
+   
+   
+Chapter 4 
+page 102 Exercises 
+  Exercise 4-1. Write a program that prompts for two integers to be entered and then uses an
+  if-else statement to output a message that states whether or not the integers are the same.
+The correct text should be (according to the solution provided in this github) 
+  Exercise 4-1. Write a program that prompts for two positive integers to be entered and then uses an
+  if-else statement to output a message that states whether or not the 1st integer is exactly divided by the 2nd.
+  
+  
+Chapter 5
+page 141 
+The sentence : "The function is a member of the class type, array<double,100>,
+of the object all array objects will have a fill() member, as well as other members."
+should be substituted by : "The function is a member of the class type, array<double,100>,
+of the object. All array objects will have a fill() member, as well as other members."
+
+Chapter 6
+page 160 
+The sentence near the top of the page: "If Arnie was an option instead
+of Fatty, the minimum array dimension would need to accommodate the string “Arnold Schwarzenegger”, which
+requires 21 bytes." 
+should have the following end: " ... which requires 22 bytes." , because we need one extra byte for the \0
+
+page 169 Dynamic Allocation of Arrays
+The initial sentences are confusing. Here is how they are now :
+<< Assuming that you’ve already declared pstring, of type
+“pointer to char,” you could allocate an array of type char in the free store by writing the following:
+double* pdata {new double[20]};       // Allocate 100 double values   >>
+But the writer must decide if he wants to talk about a char array pstring or a double array pdata (100 or 20 elements?). 
+And also take in account that, as shown on the bottom of page 168, it is not needed to declare in a seperate step the pointer
+A possible chabge could be to drop the initial "Assuming ... , " and have either :
+<<You could allocate an array of type char in the free store by writing the following:
+  *char pstring {new char[20]};         // Allocate 20 char values  >>
+  or :
+<<You could allocate an array of type char in the free store by writing the following:
+double* pdata {new double[20]};       // Allocate 20 double values   >>
+Please contact the author to check this serious issue. 
+
+page 171 Memory Leaks
+  Last sentence of the paragraph is: 
+"If a pointer contains the address of a block of memory in the free store goes out of
+scope, then it’s no longer possible to delete the memory."
+  Should be substituted with : 
+"If a pointer, that contains the address of a block of memory in the free store, goes out of
+scope, then it’s no longer possible to delete that memory."
+   Other possible ways to say the same thing: 
+"If a pointer contains the address of a block of memory in the free store and goes out of
+scope, then it’s no longer possible to delete the memory."
+"If a pointer containing the address of a block of memory in the free store goes out of
+scope, then it’s no longer possible to delete the memory."
+
+page 174 
+The lines : 
+const size_t n {100};       // Array size
+std::unique_ptr< double[]> pvalues {new double[n]} ; // Create array of n elements on the heap
+should be substituted with (to be consistent with the following for-loops):
+const size_t max {100};     // Array size
+std::unique_ptr< double[]> pvalues {new double[max]} ; // Create array of max elements on the heap
+ 
+page 175
+ The sentence :
+"The result of executing this is that pdata will cease to point to anything."
+ should be substituted with :
+"The result of executing this is that pvalue will cease to point to anything."
+
+page 176
+std::cout << *pd << std::endl;    // Outputs 999.0   (this is wrong) 
+std::cout << *pdata2 << std::endl;    // Outputs 999.0  (this is the correct to appear in the book) 
+
+
+Chapter 7 
+page 186 
+The line : string sleeping {6, 'z'};
+should be like this : string sleeping (6, 'z');
+Similarly instead of : string light_sleeper {1, 'z'}; 
+we should have : string light_sleeper (1, 'z');
+
+page 197
+At the top of page , 1st code snippet is confusing and is followed by a sentence with a typing error: 
+if (!text.compare(i, 4, phrase, 7, 4))
+   std::cout << "text contains " << phrase << " starting at index " << i << std::endl;
+The above code should have a different output. Something like :
+if (!text.compare(i, 4, phrase, 7, 4))
+   std::cout << "text contains -pick- starting at index " << i << std::endl;
+And the following sentence says :
+ The two additional arguments are the index position of the substring in phrase and its length. The substring of
+   text is compared with the substring of text.
+The correct of course would be to say : 
+ The substring of text is compared with the substring of phrase.
+
+
+Chapter 8
+page 224 
+A very serious explanation error, just before the Note at the top of page:
+"Passing a non-const argument for const function parameter will not compile."  [NO! it will compile!]
+The correct is the opposite, here is how it can be expressed in clear and unambigous language : 
+"Passing a const pointer variable from the caller code block, as argument for a non-const pointer function-parameter, 
+will not compile, because the compiler could not ensure that such a non-const pointer parameter is not altered in the 
+function body "

@@ -5,7 +5,8 @@
 #include "printthat.h"
 
 #include <iostream>                                                    // ADDED
-extern int print_count = 0;                                            // Counts calls to print() ADDED
+// Do not need the "extern", since print_count is an non-constant varaible in global
+int print_count = 0;                                                   // Counts calls to print() ADDED
 
 int main()
 {

@@ -14,7 +14,7 @@ private:
 public:
   // Constructors
   Box(double lv, double wv, double hv) :
-    length {lv}, width {wv}, height {hv} {};
+    length {lv}, width {wv}, height {hv} {}
 
   Box() {}                                                               // No-arg constructor
 

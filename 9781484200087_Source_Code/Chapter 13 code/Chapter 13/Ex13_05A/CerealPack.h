@@ -8,7 +8,7 @@
 class CerealPack : public Carton, public Contents
 {
 public:
-  CerealPack::CerealPack(double length, double width, double height, const string cerealType) :
+  CerealPack(double length, double width, double height, const string cerealType) :
               Carton {length, width, height, "cardboard"}, Contents {cerealType} 
   {
     std::cout << "CerealPack constructor" << std::endl;

@@ -2,6 +2,8 @@
 #ifndef CONTENTS_H
 #define CONTENTS_H
 #include <iostream>
+#include <string>
+using std::string;
 
 class Contents
 {

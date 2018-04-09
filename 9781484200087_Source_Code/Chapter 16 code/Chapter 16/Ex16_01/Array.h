@@ -4,6 +4,7 @@
 
 #include <stdexcept>                        // For standard exception types
 #include <string>                           // For to_string()
+#include <iostream>                         // For std::cerr
 
 template <typename T>
 class Array
